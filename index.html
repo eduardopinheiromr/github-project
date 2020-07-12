@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeWars - Project</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body class="flex column">
+  <header class="flex">
+    <input id="username" type="text" placeholder="Digite o nome de usuário">
+    <button id="botao-user">Pegar usuário</button>
+    <span>eduardopinheiromr</span>
+  </header>
+  <main class="flex">
+    <div id="usuario"></div>
+    <div id="repositories"></div>
+  </main>
+
+
+  <!-- <script src="./src/views/animations.js"></script> -->
+  <script src="./src/models/User.js"></script>
+  <script src="./src/views/UserView.js"></script>
+  <script src="./src/controllers/SearchUserController.js"></script>
+  <script>
+    let btn = document.getElementById("botao-user");
+
+    btn.onclick = () => {
+      let username = document.getElementById("username").value;
+      let usuario = document.getElementById("usuario");
+      let repositories = document.getElementById("repositories");
+
+      usuario.innerHTML = SearchUserController.getUser(username)[0]
+      repositories.appendChild(SearchUserController.getUser(username)[1])
+    }
+  </script>
+</body>
+
+</html>

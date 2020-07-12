@@ -1,0 +1,62 @@
+body{
+  font-family: SEGOE UI;
+  max-height: 95vh;
+}
+
+header{
+  height: 50px;
+  align-items: center;
+}
+
+main{
+  justify-content: space-between
+}
+
+.card{
+  height: 300px;
+  width: 300px;
+  text-align: center;
+}
+
+.flex{
+  display: flex;
+}
+
+.column{
+  flex-direction: column;
+}
+
+.user-picture{
+  height: 300px;
+  width: 300px;
+}
+
+.repository{
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: lightgray;
+  color: black;
+  height: 100px;
+  width: 200px;
+  border-bottom: 1px solid black;
+}
+
+.repository span{
+  font-size: 20px;
+}
+
+.repository a{
+  color: black;
+  text-decoration: none;
+}
+
+.wrap{
+  flex-wrap: wrap;
+}
+
+.repositories{
+  max-height: 90vh;
+  overflow: scroll;
+  width: 220px;
+}
