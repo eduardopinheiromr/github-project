@@ -9,7 +9,7 @@ header{
   min-height: 50px;
   align-items: center;
   background-color: #111;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 main{
@@ -128,4 +128,33 @@ button{
 body::-webkit-scrollbar {
   width: 1px;
   background: #F4F4F4;
+}
+
+@media (max-width: 840px){
+  .repository{
+    width: 90%;
+  }
+}
+
+@media (max-width: 640px){
+  main{
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+  }
+  .repositories{
+    margin-top: 250px;
+  }
+  #usuario{
+    margin: 0;
+  }
+}
+
+@media (max-width: 450px){
+  input{
+    width: 60%;
+  }
+  button{
+    width: 10%;
+  }
 }
