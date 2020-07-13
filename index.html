@@ -10,13 +10,14 @@
 
 <body class="flex column">
   <header class="flex">
+    <img src="./src/assets/images/github.svg" alt="Github Logo" class="gitlogo">
     <input id="username" type="text" placeholder="Digite o nome de usuário">
-    <button id="botao-user">Pegar usuário</button>
+    <button id="botao-user"><img src="./src/assets/images/lupa.svg" alt="Procurar" class="search"></button>
     <span>eduardopinheiromr</span>
   </header>
   <main class="flex">
     <div id="usuario"></div>
-    <div id="repositories"></div>
+    <div id="repositories" class="flex"></div>
   </main>
 
 
@@ -26,12 +27,12 @@
   <script src="./src/controllers/SearchUserController.js"></script>
   <script>
     let btn = document.getElementById("botao-user");
-
+    let usuario = document.getElementById("usuario");
+    let repositories = document.getElementById("repositories");
     btn.onclick = () => {
-      let username = document.getElementById("username").value;
-      let usuario = document.getElementById("usuario");
-      let repositories = document.getElementById("repositories");
 
+      let username = document.getElementById("username").value;
+      repositories.innerHTML = ""
       usuario.innerHTML = SearchUserController.getUser(username)[0]
       repositories.appendChild(SearchUserController.getUser(username)[1])
     }

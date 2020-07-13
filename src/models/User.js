@@ -1,6 +1,7 @@
 class User {
   constructor(userData) {
-    const { login, avatar_url, html_url, bio, location, blog, followers, following, created_at, public_repos, followers_url, following_url, starred_url, repos_url } = userData;
+    const { name, login, avatar_url, html_url, bio, location, blog, followers, following, created_at, public_repos, followers_url, following_url, starred_url, repos_url } = userData;
+    this._name = name;
     this._login = login;
     this._avatar_url = avatar_url;
     this._html_url = html_url;
@@ -11,7 +12,7 @@ class User {
     this._following = following;
     this._created_at = created_at;
     this._public_repos = public_repos;
-    this._created_at = created_at;
+    this._created_at = new Date(`${created_at}`).toLocaleDateString();
     this._followers_url = followers_url;
     this._following_url = following_url;
     this._starred_url = starred_url;
@@ -19,6 +20,7 @@ class User {
   }
   returnUser() {
     return {
+      name: this._name,
       login: this._login,
       avatar_url: this._avatar_url,
       html_url: this._html_url,

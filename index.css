@@ -1,15 +1,67 @@
 body{
+  margin: 0;
+  padding: 0;
   font-family: SEGOE UI;
   max-height: 95vh;
 }
 
 header{
-  height: 50px;
+  min-height: 50px;
   align-items: center;
+  background-color: #111;
+  margin-bottom: 10px;
 }
 
 main{
+  width: 100;
   justify-content: space-between
+}
+
+h2{
+  margin-bottom: -2px;
+}
+
+.gitlogo{
+  height: 35px;
+  margin-left: 20px;
+}
+
+input{
+  height: 30px;
+  width: 250px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-left: 10px;
+  margin-left: 20px;
+  background: #333;
+  color: whitesmoke;
+  border: none;
+  font-size: 14pt;
+}
+
+input::-webkit-input-placeholder {
+  color: whitesmoke;
+}
+
+button{
+  width: 100px;
+  height: 32px;
+  background: #333;
+  border: none;
+  cursor: pointer;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.search{
+  height: 20px;
+  width: 20px;
+}
+
+#usuario{
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
 }
 
 .card{
@@ -29,17 +81,22 @@ main{
 .user-picture{
   height: 300px;
   width: 300px;
+  border-radius: 100%;
+  margin-bottom: -15px;
 }
 
 .repository{
   text-align: center;
   align-items: center;
   justify-content: space-evenly;
-  background-color: lightgray;
+  background-color: whitesmoke;
   color: black;
   height: 100px;
-  width: 200px;
-  border-bottom: 1px solid black;
+  width: 45%;
+  border: 1px solid lightgray;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
 
 .repository span{
@@ -58,5 +115,17 @@ main{
 .repositories{
   max-height: 90vh;
   overflow: scroll;
-  width: 220px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+.repositories::-webkit-scrollbar {
+  width: 1px;
+  background: #F4F4F4;
+}
+body::-webkit-scrollbar {
+  width: 1px;
+  background: #F4F4F4;
 }

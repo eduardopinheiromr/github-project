@@ -3,11 +3,12 @@ class UserView {
     // throw "Não é possível instanciar esta classe."
   }
   renderUser(user) {
-    const { login, avatar_url, html_url, bio, location, blog, followers, following, created_at } = user;
+    const { name, login, avatar_url, html_url, bio, location, blog, followers, following, created_at } = user;
     return `
       <div class="card flex column">
-      <a href="${html_url}"><h1>${login}</h1></a>
-        <img class="user-picture" src="${avatar_url}"/>
+      <img class="user-picture" src="${avatar_url}"/>
+      <h2><b>${name}</b></h2>
+      <a href="${html_url}"><span>@${login}</span></a>
         <span>${location}</span>
         <span>${bio}</span>
         <a href="${blog}"><span>${blog}</span></a>
