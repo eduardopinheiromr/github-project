@@ -14,17 +14,23 @@
     <input id="username" type="text" placeholder="Digite o nome de usuário">
     <button id="botao-user"><img src="./src/assets/images/lupa.svg" alt="Procurar" class="search"></button>
   </header>
+  <div class="error"></div>
   <main class="flex">
     <div id="usuario"></div>
     <div id="repositories" class="flex"></div>
     <div id="follow" class="flex"></div>
+    <div class="octocat">
+      <span>Busque por usuários no GitHub =^.^=</span>
+      <img src="./src/assets/images/octocat.webp" alt="octocat"></div>
   </main>
+
 
   <!-- <script src="./src/models/List.js"></script>
     <script src="./src/controllers/FollowController.js"></script> -->
   <script src="main.js"></script>
   <script src="./src/models/User.js"></script>
   <script src="./src/views/UserView.js"></script>
+  <script src="./src/controllers/SearchHelper.js"></script>
   <script src="./src/controllers/SearchUserController.js"></script>
 </body>
 

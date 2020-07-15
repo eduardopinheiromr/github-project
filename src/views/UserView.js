@@ -5,7 +5,7 @@ class UserView {
   renderUser(user) {
     const { name, login, avatar_url, html_url, bio, location, blog, followers, following, created_at } = user;
     return `
-      <div class="card flex column">
+      <div class="card flex column fade">
       <img class="user-picture" src="${avatar_url}"/>
       <h2><b>${name}</b></h2>
       <a href="${html_url}"><span>@${login}</span></a>
@@ -22,7 +22,7 @@ class UserView {
   }
   renderRepositories(json) {
     let repositories = document.createElement('div')
-    repositories.className = "flex wrap repositories"
+    repositories.className = "flex wrap repositories fade"
     json.map((element) => {
       let repositoryBody = document.createElement('div')
       repositoryBody.className = "flex column repository"
@@ -38,6 +38,13 @@ class UserView {
     })
     return repositories
   }
+
+  static renderError() {
+    return `
+      <div><span>Usuário não encontrado</span></>
+      `
+  }
+
   // renderStarred(json) {
   //   const { name, full_name } = json
   // }

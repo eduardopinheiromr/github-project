@@ -3,12 +3,15 @@ const searchBtn = document.getElementById("botao-user");
 const usuario = document.getElementById("usuario");
 const repositories = document.getElementById("repositories");
 const follow = document.getElementById("follow")
+const errorDiv = document.querySelector(".error")
+const octocat = document.querySelector(".octocat")
 
 inputUsername.addEventListener('keyup', handleSearch)
 searchBtn.addEventListener('click', searchUser)
 
 function searchUser() {
-
+  octocat.style.display = "none"
+  errorDiv.innerHTML = ""
   const username = document.getElementById("username").value;
   repositories.innerHTML = ""
   usuario.innerHTML = SearchUserController.getUser(username)[0]

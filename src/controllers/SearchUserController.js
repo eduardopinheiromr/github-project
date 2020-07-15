@@ -6,8 +6,13 @@ class SearchUserController {
     const req = new XMLHttpRequest();
     req.open("GET", urlAPI, false);
     req.send();
-    const data = JSON.parse(req.responseText);
-    return data
+    if (req.status == 200) {
+      const data = JSON.parse(req.responseText);
+      return data
+    } else {
+      SearchHelper.error()
+    }
+
   }
   static getUser(username) {
     //Requisição do usuário completo

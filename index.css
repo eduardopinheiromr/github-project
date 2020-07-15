@@ -9,10 +9,11 @@ header{
   min-height: 50px;
   align-items: center;
   background-color: #111;
-  margin-bottom: 15px;
+  z-index: 10;
 }
 
 main{
+  margin-top: 15px;
   width: 100%;
 }
 
@@ -57,6 +58,29 @@ button{
   width: 20px;
 }
 
+.error{
+  z-index: 1;
+  display: none;
+  height: 50px;
+  width: 360px;
+  margin-left: 75px;
+  background: rgb(243, 170, 170);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  animation-name: error;
+  animation-duration: 1s;
+}
+
+@keyframes error{
+  0%{
+    opacity: 0;
+    margin-top: -50px;
+  }
+  100%{
+    margin-top: 0;
+    opacity: 1;
+  }
+}
 #usuario{
   align-items: center;
   justify-content: center;
@@ -69,6 +93,38 @@ button{
 
 #usuario a{
   margin-bottom: 5px;
+}
+
+.octocat{
+  height: 85vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.octocat img{
+  z-index: 1;
+  height: 250px;
+  width: 280px;
+}
+.octocat span{
+  z-index: 0;
+  font-size: 15pt;
+  margin-bottom: 150px;
+  animation-name: octotext;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes octotext{
+  0%{
+    opacity: 0;
+    margin-right: -300px;
+  }
+  100%{
+    margin-right: 10;
+  }
 }
 
 .location{
@@ -174,5 +230,19 @@ body::-webkit-scrollbar {
   }
   button{
     width: 10%;
+  }
+}
+
+.fade{
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@keyframes fade{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
   }
 }
