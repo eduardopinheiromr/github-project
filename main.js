@@ -6,6 +6,8 @@ const follow = document.getElementById("follow")
 const errorDiv = document.querySelector(".error")
 const octocat = document.querySelector(".octocat")
 
+inputUsername.focus()
+
 inputUsername.addEventListener('keyup', handleSearch)
 searchBtn.addEventListener('click', searchUser)
 

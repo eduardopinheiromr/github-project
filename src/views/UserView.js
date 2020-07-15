@@ -8,12 +8,12 @@ class UserView {
       <div class="card flex column fade">
       <img class="user-picture" src="${avatar_url}"/>
       <h2><b>${name}</b></h2>
-      <a href="${html_url}"><span>@${login}</span></a>
+      <a href="${html_url}" target="_blank"><span>@${login}</span></a>
         <div class="flex center">
         <img src="./src/assets/images/location.svg" class="location"><span>${location}</span>
         </div>
         <span>${bio}</span>
-        <a href="${blog}"><span>${blog}</span></a>
+        <a href="${blog}" target="_blank"><span>${blog}</span></a>
         <span>Seguidores: <strong id="followersBtn">${followers}</strong></span>
         <span>Seguindo: <strong id="followingBtn">${following}</strong></span>
         <span>Membro desde ${created_at}</span>
@@ -24,17 +24,24 @@ class UserView {
     let repositories = document.createElement('div')
     repositories.className = "flex wrap repositories fade"
     json.map((element) => {
-      let repositoryBody = document.createElement('div')
-      repositoryBody.className = "flex column repository"
-      let repoName = document.createElement('span')
-      repoName.innerText = element.name;
       let repoLink = document.createElement('a')
+      repoLink.setAttribute('target', '_blank')
       repoLink.href = `http://github.com/${element.full_name}`;
-      repoLink.innerText = "Acesso ao repositório"
+      repoLink.className = "flex column repository"
 
+      let repositoryBody = document.createElement('div')
+      repositoryBody.className = "flex column"
+
+      let repoName = document.createElement('p')
+      repoName.innerText = element.name;
+
+      let repoText = document.createElement('span')
+      repoText.innerText = "Acesso ao repositório"
+
+      repoLink.appendChild(repositoryBody)
       repositoryBody.appendChild(repoName)
-      repositoryBody.appendChild(repoLink)
-      repositories.appendChild(repositoryBody)
+      repositoryBody.appendChild(repoText)
+      repositories.appendChild(repoLink)
     })
     return repositories
   }

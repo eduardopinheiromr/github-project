@@ -172,12 +172,16 @@ button{
   margin-bottom: 10px;
   border-radius: 10px;
 }
-
-.repository span{
-  font-size: 20px;
+.repository p{
+  font-size: 18px;
 }
 
-.repository a{
+.repository span{
+  text-decoration: underline;
+  font-size: 15px;
+}
+
+a{
   color: black;
   text-decoration: none;
 }
