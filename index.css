@@ -63,6 +63,20 @@ button{
   margin-left: 15px;
 }
 
+#usuario span{
+  margin-bottom: 5px;
+}
+
+#usuario a{
+  margin-bottom: 5px;
+}
+
+.location{
+  height: 20px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
 .card{
   height: 300px;
   width: 300px;
@@ -71,6 +85,11 @@ button{
 
 .flex{
   display: flex;
+}
+
+.center{
+  align-items: center;
+  justify-content: center;
 }
 
 .column{

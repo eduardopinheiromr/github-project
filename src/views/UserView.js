@@ -9,7 +9,9 @@ class UserView {
       <img class="user-picture" src="${avatar_url}"/>
       <h2><b>${name}</b></h2>
       <a href="${html_url}"><span>@${login}</span></a>
-        <span>${location}</span>
+        <div class="flex center">
+        <img src="./src/assets/images/location.svg" class="location"><span>${location}</span>
+        </div>
         <span>${bio}</span>
         <a href="${blog}"><span>${blog}</span></a>
         <span>Seguidores: <strong id="followersBtn">${followers}</strong></span>
@@ -36,35 +38,36 @@ class UserView {
     })
     return repositories
   }
-  renderStarred(json) {
-    const { name, full_name } = json
-  }
-  renderFollowers(json) {
-    let followersList = document.createElement('div')
-    followersList.className = "flex wrap followers"
-    json.map((element) => {
-      let followersBody = document.createElement('div')
-      followersBody.className = "flex column repository"
+  // renderStarred(json) {
+  //   const { name, full_name } = json
+  // }
+  // renderFollowers(json) {
+  //   let followersList = document.createElement('div')
+  //   followersList.className = "flex wrap followers"
+  //   console.log(json);
+  //   json.map((element) => {
+  //     let followersBody = document.createElement('div')
+  //     followersBody.className = "flex column repository"
 
-      let login = document.createElement('span')
-      login.innerText = element.login;
+  //     let login = document.createElement('span')
+  //     login.innerText = element.login;
 
-      let avatar = document.createElement('img')
-      avatar.src = element.avatar_url;
+  //     let avatar = document.createElement('img')
+  //     avatar.src = element.avatar_url;
 
-      let htmlUrl = document.createElement('a')
-      htmlUrl.href = element.html_url;
-      htmlUrl.innerText = "Visitar perfil"
+  //     let htmlUrl = document.createElement('a')
+  //     htmlUrl.href = element.html_url;
+  //     htmlUrl.innerText = "Visitar perfil"
 
-      followersBody.appendChild(login)
-      followersBody.appendChild(avatar)
-      followersBody.appendChild(htmlUrl)
-      followersList.appendChild(followersBody)
-    })
-    return followersList
-  }
-  renderFollowing(json) {
-    const { login, avatar_url, html_url } = json
-  }
+  //     followersBody.appendChild(login)
+  //     followersBody.appendChild(avatar)
+  //     followersBody.appendChild(htmlUrl)
+  //     followersList.appendChild(followersBody)
+  //   })
+  //   return followersList
+  // }
+  // renderFollowing(json) {
+  //   const { login, avatar_url, html_url } = json
+  // }
 }
 

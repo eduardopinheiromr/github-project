@@ -13,7 +13,6 @@
     <img src="./src/assets/images/github.svg" alt="Github Logo" class="gitlogo">
     <input id="username" type="text" placeholder="Digite o nome de usuário">
     <button id="botao-user"><img src="./src/assets/images/lupa.svg" alt="Procurar" class="search"></button>
-    <!-- <span>eduardopinheiromr</span> -->
   </header>
   <main class="flex">
     <div id="usuario"></div>
@@ -21,33 +20,12 @@
     <div id="follow" class="flex"></div>
   </main>
 
-
-  <!-- <script src="./src/views/animations.js"></script> -->
+  <!-- <script src="./src/models/List.js"></script>
+    <script src="./src/controllers/FollowController.js"></script> -->
+  <script src="main.js"></script>
   <script src="./src/models/User.js"></script>
-  <script src="./src/models/List.js"></script>
   <script src="./src/views/UserView.js"></script>
-  <script src="./src/controllers/FollowController.js"></script>
   <script src="./src/controllers/SearchUserController.js"></script>
-  <script>
-    const searchBtn = document.getElementById("botao-user");
-    const usuario = document.getElementById("usuario");
-    const repositories = document.getElementById("repositories");
-    const follow = document.getElementById("follow")
-
-    searchBtn.onclick = () => {
-
-      const username = document.getElementById("username").value;
-      repositories.innerHTML = ""
-      usuario.innerHTML = SearchUserController.getUser(username)[0]
-      repositories.appendChild(SearchUserController.getUser(username)[1])
-
-      const followersBtn = document.getElementById("followersBtn");
-      followersBtn.onclick = () => {
-        repositories.style.display = "none";
-        follow.innerHTML = SearchUserController.getUser(username)[3]
-      }
-    }
-  </script>
 </body>
 
 </html>
