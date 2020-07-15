@@ -222,6 +222,22 @@ body::-webkit-scrollbar {
   #usuario{
     margin: 0;
   }
+  .error{
+    margin-left: 50px;
+    width: 300px;
+  }
+  .octocat{
+    justify-content: center;
+    height: 300px;
+    flex-direction: column;
+  }
+  .octocat span{
+    text-align: center;
+    margin-top: 100px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    animation-name: scroll-up;
+  }
 }
 
 @media (max-width: 450px){
@@ -230,6 +246,18 @@ body::-webkit-scrollbar {
   }
   button{
     width: 10%;
+  }
+}
+
+@media (max-width: 330px){
+  .error{
+    margin-left: 10px;
+  }
+  .octocat span{
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: -1px;
+    animation-name: none;
   }
 }
 
@@ -244,5 +272,15 @@ body::-webkit-scrollbar {
   }
   100%{
     opacity: 1;
+  }
+}
+
+@keyframes scroll-up{
+  0%{
+    opacity: 0;
+    margin-bottom: -100px;
+  }
+  100%{
+    margin-bottom: 15px;
   }
 }
