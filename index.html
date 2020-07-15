@@ -18,23 +18,34 @@
   <main class="flex">
     <div id="usuario"></div>
     <div id="repositories" class="flex"></div>
+    <div id="follow" class="flex"></div>
   </main>
 
 
   <!-- <script src="./src/views/animations.js"></script> -->
   <script src="./src/models/User.js"></script>
+  <script src="./src/models/List.js"></script>
   <script src="./src/views/UserView.js"></script>
+  <script src="./src/controllers/FollowController.js"></script>
   <script src="./src/controllers/SearchUserController.js"></script>
   <script>
-    let btn = document.getElementById("botao-user");
-    let usuario = document.getElementById("usuario");
-    let repositories = document.getElementById("repositories");
-    btn.onclick = () => {
+    const searchBtn = document.getElementById("botao-user");
+    const usuario = document.getElementById("usuario");
+    const repositories = document.getElementById("repositories");
+    const follow = document.getElementById("follow")
 
-      let username = document.getElementById("username").value;
+    searchBtn.onclick = () => {
+
+      const username = document.getElementById("username").value;
       repositories.innerHTML = ""
       usuario.innerHTML = SearchUserController.getUser(username)[0]
       repositories.appendChild(SearchUserController.getUser(username)[1])
+
+      const followersBtn = document.getElementById("followersBtn");
+      followersBtn.onclick = () => {
+        repositories.style.display = "none";
+        follow.innerHTML = SearchUserController.getUser(username)[3]
+      }
     }
   </script>
 </body>

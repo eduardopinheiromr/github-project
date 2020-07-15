@@ -12,8 +12,8 @@ class UserView {
         <span>${location}</span>
         <span>${bio}</span>
         <a href="${blog}"><span>${blog}</span></a>
-        <span>Seguidores: ${followers}</span>
-        <span>Seguindo: ${following}</span>
+        <span>Seguidores: <strong id="followersBtn">${followers}</strong></span>
+        <span>Seguindo: <strong id="followingBtn">${following}</strong></span>
         <span>Membro desde ${created_at}</span>
       </div>
     `;
@@ -40,18 +40,31 @@ class UserView {
     const { name, full_name } = json
   }
   renderFollowers(json) {
-    const { login, avatar_url, html_url } = json
+    let followersList = document.createElement('div')
+    followersList.className = "flex wrap followers"
+    json.map((element) => {
+      let followersBody = document.createElement('div')
+      followersBody.className = "flex column repository"
+
+      let login = document.createElement('span')
+      login.innerText = element.login;
+
+      let avatar = document.createElement('img')
+      avatar.src = element.avatar_url;
+
+      let htmlUrl = document.createElement('a')
+      htmlUrl.href = element.html_url;
+      htmlUrl.innerText = "Visitar perfil"
+
+      followersBody.appendChild(login)
+      followersBody.appendChild(avatar)
+      followersBody.appendChild(htmlUrl)
+      followersList.appendChild(followersBody)
+    })
+    return followersList
   }
   renderFollowing(json) {
     const { login, avatar_url, html_url } = json
   }
 }
-
-// created_at: this._created_at,
-// public_repos: this._public_repos,
-// created_at: this._created_at,
-// followers_url: this.followers_url,
-// following_url: this.following_url,
-// starred_url: this.starred_url,
-// repos_url: this.repos_url
 

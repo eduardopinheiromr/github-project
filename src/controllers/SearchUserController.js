@@ -27,12 +27,13 @@ class SearchUserController {
     const reposJSON = SearchUserController.getJSON(userURLs.repos_url)
 
     //Próximas Features
-    // const followersJSON = SearchUserController.getJSON(userURLs.followers_url)
-    // const followingJSON = SearchUserController.getJSON(userURLs.following_url)
+    const followersJSON = SearchUserController.getJSON(userURLs.followers_url)
+    const followingJSON = SearchUserController.getJSON(userURLs.following_url)
+
     // const starredJSON = SearchUserController.getJSON(userURLs.starred_url)
     //Array completo
     // let array = [view.renderUser(this._user.returnUser()), view.renderRepositories(reposJSON), view.renderFollowers(followersJSON), view.renderFollowing(followingJSON), view.renderStarred(starredJSON)]
-    let array = [view.renderUser(this._user.returnUser()), view.renderRepositories(reposJSON)]
+    let array = [view.renderUser(this._user.returnUser()), view.renderRepositories(reposJSON), FollowController.getFollowersList(followersJSON), FollowController.getFollowingList(followingJSON)]
     return array
   }
 }
